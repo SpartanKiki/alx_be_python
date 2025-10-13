@@ -1,1 +1,2 @@
 - Added pattern_drawing.py: learned while loops and nested for loops to draw patterns
+- Added daily_reminder.py: learned match case + if statements to build a daily reminder tool
