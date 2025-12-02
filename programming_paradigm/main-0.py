@@ -1,8 +1,10 @@
+# main-0.py
 import sys
 from bank_account import BankAccount
 
 def main():
-    account = BankAccount(100)  # Starting balance
+    # start with $100 by default (matches the project example)
+    account = BankAccount(100)
 
     if len(sys.argv) < 2:
         print("Usage: python main-0.py <command>:<amount>")
@@ -14,17 +16,23 @@ def main():
 
     if command == "deposit" and amount is not None:
         account.deposit(amount)
-        print(f"Deposited: ${amount}")
-
+        # match the sample expected message exactly
+        if float(amount).is_integer():
+            amount_display = int(amount)
+        else:
+            amount_display = amount
+        print(f"Deposited: ${amount_display}")
     elif command == "withdraw" and amount is not None:
         if account.withdraw(amount):
-            print(f"Withdrew: ${amount}")
+            if float(amount).is_integer():
+                amount_display = int(amount)
+            else:
+                amount_display = amount
+            print(f"Withdrew: ${amount_display}")
         else:
             print("Insufficient funds.")
-
     elif command == "display":
         account.display_balance()
-
     else:
         print("Invalid command.")
 
