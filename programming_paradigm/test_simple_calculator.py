@@ -22,12 +22,12 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.multiply(-1, 1), -1)
         self.assertEqual(self.calc.multiply(-5, -5), 25)
 
-    def test_divide(self):
+    def test_division(self):
         self.assertEqual(self.calc.divide(10, 5), 2)
         self.assertEqual(self.calc.divide(-10, 5), -2)
         self.assertEqual(self.calc.divide(-10, -5), 2)
 
-        # division by zero
+        # ZeroDivisionError test
         with self.assertRaises(ZeroDivisionError):
             self.calc.divide(10, 0)
 
