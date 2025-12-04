@@ -17,7 +17,7 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.subtract(-1, 1), -2)
         self.assertEqual(self.calc.subtract(-5, -5), 0)
 
-    def test_multiply(self):
+    def test_multiplication(self):
         self.assertEqual(self.calc.multiply(10, 5), 50)
         self.assertEqual(self.calc.multiply(-1, 1), -1)
         self.assertEqual(self.calc.multiply(-5, -5), 25)
@@ -27,7 +27,7 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.divide(-10, 5), -2)
         self.assertEqual(self.calc.divide(-10, -5), 2)
 
-        # test division by zero
+        # division by zero
         with self.assertRaises(ZeroDivisionError):
             self.calc.divide(10, 0)
 
