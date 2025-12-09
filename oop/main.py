@@ -1,20 +1,17 @@
-from library_system import Book, PrintBook, EBook, Library
+from library_system import Book, EBook, PrintBook, Library
 
 def main():
-    library = Library()
+    my_library = Library()
 
-    # Create book instances
-    book1 = Book("Things Fall Apart", "Chinua Achebe", 209)
-    book2 = PrintBook("Harry Potter", "J.K. Rowling", 340, "Hard")
-    book3 = EBook("Atomic Habits", "James Clear", 250, "PDF", "5MB")
+    classic_book = Book("Pride and Prejudice", "Jane Austen")
+    digital_novel = EBook("Snow Crash", "Neal Stephenson", 500)
+    paper_novel = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
 
-    # Add them to the library
-    library.add_book(book1)
-    library.add_book(book2)
-    library.add_book(book3)
+    my_library.add_book(classic_book)
+    my_library.add_book(digital_novel)
+    my_library.add_book(paper_novel)
 
-    # Print output
-    print(library.list_books())
+    my_library.list_books()
 
 
 if __name__ == "__main__":
