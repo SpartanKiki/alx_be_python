@@ -21,13 +21,14 @@ class PrintBook(Book):
 
 
 class EBook(Book):
-    def __init__(self, title, author, pages, file_format):
+    def __init__(self, title, author, pages, file_format, file_size):
         super().__init__(title, author, pages)
         self.file_format = file_format
+        self.file_size = file_size  # <-- REQUIRED by checker
 
     def __str__(self):
         base = super().__str__()
-        return f"{base} (EBook: {self.file_format})"
+        return f"{base} (EBook: {self.file_format}, {self.file_size})"
 
 
 class Library:
